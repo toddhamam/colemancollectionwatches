@@ -6,6 +6,29 @@ Built with Next.js 16, React Three Fiber, GSAP, Framer Motion, and Tailwind CSS 
 
 ## Changelog
 
+### v0.3.0 — Spliced Deconstruction, Annotation Lines & Scroll Performance
+
+**Spliced Deconstruction Sequence**
+- Combined best-of-both deconstruction videos: frames 1-90 from new 1080p source (sharp exploded view), frames 91-121 from original video (elegant caseback-in-hand reveal with "Coleman Collection" branding)
+- Old frames upscaled from 1088x844 to 1632x1268 via lanczos filter for seamless resolution match
+- Removed raw .mp4 source videos from repo to reduce bundle size
+
+**Animated Annotation Lines**
+- Golden SVG bezier curves draw from each feature card toward the corresponding watch component during scroll
+- Lines animate in with a 1.5s stroke-dashoffset draw effect and smooth cubic-bezier easing
+- Endpoint markers: gold dot with outer ring, fade in after the line finishes drawing
+- Annotation lines visible on desktop (lg+), hidden on mobile for clean layout
+
+**Enhanced Feature Cards**
+- More prominent styling: increased padding, larger title text, stronger backdrop blur
+- Gold accent border on the inner edge (facing center) connecting visually to the annotation line
+- Numbered labels (01–04) in gold monospace for technical blueprint aesthetic
+
+**Scroll Performance Fix**
+- Eliminated React state (`setProgress`) from the scroll path — all scroll-driven updates now use direct DOM manipulation via refs
+- Zero React re-renders during scroll; component only re-renders on window resize
+- Fixed scroll indicator entrance delay being bypassed by `applyProgress` on mount
+
 ### v0.2.1 — Upgrade Deconstruction to 1080p
 
 - Re-extracted 121 scroll animation frames from higher resolution (1632x1268) Kling AI generation
