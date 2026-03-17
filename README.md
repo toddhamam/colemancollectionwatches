@@ -6,6 +6,11 @@ Built with Next.js 16, React Three Fiber, GSAP, Framer Motion, and Tailwind CSS 
 
 ## Changelog
 
+### v0.2.1 — Upgrade Deconstruction to 1080p
+
+- Re-extracted 121 scroll animation frames from higher resolution (1632x1268) Kling AI generation
+- Noticeably sharper detail on movement components, sapphire crystal, and crown during deconstruction scroll
+
 ### v0.2.0 — Real Testimonials & Dedicated Reviews Page
 
 **Testimonials**
