@@ -6,6 +6,23 @@ Built with Next.js 16, React Three Fiber, GSAP, Framer Motion, and Tailwind CSS 
 
 ## Changelog
 
+### v0.2.0 — Real Testimonials & Dedicated Reviews Page
+
+**Testimonials**
+- Imported 27 verified customer reviews from product database (Loox CSV + image screenshots)
+- Curated 12 featured reviews for homepage carousel with customer photos, locations, and product variants
+- Homepage testimonial section now shows real reviews with auto-advance, prev/next arrows, and dot navigation
+
+**Reviews Page**
+- New `/reviews` page with full masonry grid of all testimonials
+- Filter tabs by product variant (All, Black & Black, Open-Heart variants)
+- Each card: customer photo or gold initial avatar, star rating, verified badge, review text, product tag
+- Framer Motion scroll-triggered entrance animations
+- "Reviews" link added to site navigation
+
+**Assets**
+- Added customer testimonial photos and review screenshots
+
 ### v0.1.0 — Luxury Homepage with Scroll-Driven Watch Deconstruction
 
 **Design System**
