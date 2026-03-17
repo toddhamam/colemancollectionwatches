@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState, useMemo, useCallback } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 
 const TOTAL_FRAMES = 121
@@ -21,7 +21,6 @@ const FEATURE_CARDS = [
     title: 'Sapphire Crystal',
     description:
       'Scratch-resistant sapphire glass protects the dial while offering perfect clarity.',
-    target: { x: 0.5, y: 0.28 },
   },
   {
     progress: 0.4,
@@ -29,7 +28,6 @@ const FEATURE_CARDS = [
     title: 'Open Heart Dial',
     description:
       'The signature open-heart window reveals the beating balance wheel beneath.',
-    target: { x: 0.48, y: 0.4 },
   },
   {
     progress: 0.6,
@@ -37,7 +35,6 @@ const FEATURE_CARDS = [
     title: 'Miyota Movement',
     description:
       'Japanese automatic movement with 21 jewels and 42-hour power reserve.',
-    target: { x: 0.5, y: 0.52 },
   },
   {
     progress: 0.8,
@@ -45,7 +42,6 @@ const FEATURE_CARDS = [
     title: 'Exhibition Caseback',
     description:
       'Transparent caseback showcases the golden rotor and intricate mechanics within.',
-    target: { x: 0.5, y: 0.5 },
   },
 ]
 
@@ -65,23 +61,6 @@ export function HeroSection() {
   const progressBarContainerRef = useRef<HTMLDivElement>(null)
   const progressBarFillRef = useRef<HTMLDivElement>(null)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
-  const linePathRefs = useRef<(SVGPathElement | null)[]>([])
-  const lineOuterRefs = useRef<(SVGCircleElement | null)[]>([])
-  const lineInnerRefs = useRef<(SVGCircleElement | null)[]>([])
-
-  // Viewport size — only state that triggers re-renders (on resize, which is rare)
-  const [vw, setVw] = useState(1920)
-  const [vh, setVh] = useState(1080)
-
-  useEffect(() => {
-    const update = () => {
-      setVw(window.innerWidth)
-      setVh(window.innerHeight)
-    }
-    update()
-    window.addEventListener('resize', update)
-    return () => window.removeEventListener('resize', update)
-  }, [])
 
   // Preload all frames
   useEffect(() => {
@@ -93,29 +72,6 @@ export function HeroSection() {
     }
     imagesRef.current = images
   }, [])
-
-  // Compute annotation line SVG paths (only recalculates on resize)
-  const linePaths = useMemo(() => {
-    const offset = vw >= 1024 ? 96 : 64
-    const cardWidth = 280
-
-    return FEATURE_CARDS.map((card) => {
-      const startX =
-        card.side === 'left' ? offset + cardWidth : vw - offset - cardWidth
-      const startY = vh * 0.5
-      const endX = vw * card.target.x
-      const endY = vh * card.target.y
-
-      const dx = endX - startX
-      const cp1X = startX + dx * 0.4
-      const cp1Y = startY
-      const cp2X = endX - dx * 0.15
-      const cp2Y = endY
-
-      const pathD = `M ${startX},${startY} C ${cp1X},${cp1Y} ${cp2X},${cp2Y} ${endX},${endY}`
-      return { pathD, endX, endY }
-    })
-  }, [vw, vh])
 
   // Apply all scroll-driven styles directly to the DOM — zero React re-renders
   const applyProgress = useCallback((p: number) => {
@@ -144,15 +100,6 @@ export function HeroSection() {
           ? 'translateX(0)'
           : `translateX(${card.side === 'left' ? '-2rem' : '2rem'})`
       }
-
-      const pathEl = linePathRefs.current[i]
-      if (pathEl) pathEl.style.strokeDashoffset = isVisible ? '0' : '2000'
-
-      const outerEl = lineOuterRefs.current[i]
-      if (outerEl) outerEl.style.opacity = isVisible ? '0.4' : '0'
-
-      const innerEl = lineInnerRefs.current[i]
-      if (innerEl) innerEl.style.opacity = isVisible ? '0.8' : '0'
     })
   }, [])
 
@@ -195,11 +142,6 @@ export function HeroSection() {
       cancelAnimationFrame(rafRef.current)
     }
   }, [applyProgress])
-
-  // Re-apply scroll state after resize triggers a React re-render
-  useEffect(() => {
-    requestAnimationFrame(() => applyProgress(progressRef.current))
-  }, [vw, vh, applyProgress])
 
   // Show scroll indicator after 2s entrance delay
   useEffect(() => {
@@ -330,58 +272,6 @@ export function HeroSection() {
           </p>
         </div>
 
-        {/* Annotation lines — desktop only */}
-        <svg className="absolute inset-0 w-full h-full z-[9] pointer-events-none hidden lg:block">
-          {FEATURE_CARDS.map((_card, i) => {
-            const { pathD, endX, endY } = linePaths[i]
-            return (
-              <g key={i}>
-                <path
-                  ref={(el) => {
-                    linePathRefs.current[i] = el
-                  }}
-                  d={pathD}
-                  stroke="#C9A96E"
-                  strokeWidth="1"
-                  fill="none"
-                  style={{
-                    opacity: 0.6,
-                    strokeDasharray: 2000,
-                    strokeDashoffset: 2000,
-                    transition:
-                      'stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1)',
-                  }}
-                />
-                <circle
-                  ref={(el) => {
-                    lineOuterRefs.current[i] = el
-                  }}
-                  cx={endX}
-                  cy={endY}
-                  r="6"
-                  fill="none"
-                  stroke="#C9A96E"
-                  strokeWidth="1"
-                  style={{ opacity: 0, transition: 'opacity 0.6s ease-out 1s' }}
-                />
-                <circle
-                  ref={(el) => {
-                    lineInnerRefs.current[i] = el
-                  }}
-                  cx={endX}
-                  cy={endY}
-                  r="2.5"
-                  fill="#C9A96E"
-                  style={{
-                    opacity: 0,
-                    transition: 'opacity 0.5s ease-out 1.2s',
-                  }}
-                />
-              </g>
-            )
-          })}
-        </svg>
-
         {/* Feature cards at scroll milestones */}
         {FEATURE_CARDS.map((card, i) => {
           const posClass =
@@ -398,14 +288,15 @@ export function HeroSection() {
                 ref={(el) => {
                   cardRefs.current[i] = el
                 }}
-                className="transition-all duration-700 ease-out"
                 style={{
                   opacity: 0,
                   transform: `translateX(${card.side === 'left' ? '-2rem' : '2rem'})`,
+                  transition: 'opacity 0.3s ease-out, transform 0.3s ease-out',
+                  willChange: 'opacity, transform',
                 }}
               >
                 <div
-                  className="bg-[#0A0A0A]/85 backdrop-blur-md border border-[#2A2A2A] rounded-sm p-7"
+                  className="bg-[#0A0A0A]/90 border border-[#2A2A2A] rounded-sm p-7"
                   style={{
                     [card.side === 'left'
                       ? 'borderRightWidth'

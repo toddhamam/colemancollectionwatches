@@ -6,6 +6,16 @@ Built with Next.js 16, React Three Fiber, GSAP, Framer Motion, and Tailwind CSS 
 
 ## Changelog
 
+### v0.3.1 — Fix Scroll Jitter by Removing Annotation Lines & Backdrop Blur
+
+**Scroll Performance**
+- Removed SVG annotation lines (Bezier curve paths + endpoint markers) — the 1.5s stroke-dashoffset CSS transitions were causing continuous repaints during scroll, making the deconstruction animation laggy and jittery on production
+- Removed `backdrop-blur-md` from feature cards — backdrop blur forces expensive Gaussian blur compositing on every scroll frame
+- Replaced `transition-all duration-700` with targeted `opacity 0.3s, transform 0.3s` on feature cards for tighter, GPU-friendly transitions
+- Added `will-change: opacity, transform` to promote animated cards to their own compositor layers
+- Removed viewport resize state tracking (`vw`/`vh`) and `useMemo` for line path calculation — no longer needed without annotation lines
+- Feature cards still appear at scroll milestones with slide-in animation, just without connector lines
+
 ### v0.3.0 — Spliced Deconstruction, Annotation Lines & Scroll Performance
 
 **Spliced Deconstruction Sequence**
