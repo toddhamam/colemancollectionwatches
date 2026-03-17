@@ -96,6 +96,10 @@ Built with Next.js 16, React Three Fiber, GSAP, Framer Motion, and Tailwind CSS 
 - GSAP ScrollTrigger provider with proper cleanup
 - Regenerated clean package-lock.json (fixed stale scaffold entries)
 
+## AI Development Setup
+
+See [CLAUDE.md](./CLAUDE.md) for installed Claude Code plugins, available skills, and the planned eCommerce stack.
+
 ## Getting Started
 
 ```bash
