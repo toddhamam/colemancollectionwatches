@@ -6,6 +6,42 @@ Built with Next.js 16, React Three Fiber, GSAP, Framer Motion, and Tailwind CSS 
 
 ## Changelog
 
+### v0.4.0 — "Build Your Timepiece" Watch Configurator
+
+**Custom Watch Builder**
+- New `/build` route with full multi-step watch configurator inspired by luxury car configurators (Rolls-Royce, Range Rover)
+- 5-step flow: Model → Movement → Dial → Strap → Summary
+- Step progress bar with clickable navigation and running price display
+- Zustand state management for configuration selections and price calculation
+
+**Product Image Preview**
+- Replaced procedural 3D watch model with real product photography in the configurator preview
+- Context-aware images: each step shows the most relevant product photo (hero shot, caseback, dial close-up, strap detail, lifestyle)
+- Smooth crossfade transitions between images using Framer Motion
+- Dial step swaps between black-dial and white-dial product shots based on selection
+
+**Configuration Options**
+- 3 models: The Sovereign, The Sovereign Black (PVD), The Sovereign Rose
+- 4 movements: Miyota 9039, Miyota 82S0, Sellita SW200-1, Sellita SW300-1
+- 5 dial colours: Obsidian Black, Pearl White, Midnight Blue, Racing Green, Champagne
+- 5 strap options: Black Leather, Saddle Brown, Cognac Tan, Steel Bracelet, Vulcanised Rubber
+- Dynamic price calculation from $495 base with per-option deltas
+
+**UI/UX Polish**
+- All text uses cream/white on dark backgrounds for readability (brand style guide enforced)
+- Increased text sizes across all option cards for better legibility
+- Back button added to Summary step for easy navigation without restarting
+- "Build Yours" CTA replaces "Shop" in site navigation and homepage
+
+**Site Architecture**
+- Route groups: `(site)` for homepage/reviews, `(configurator)` for the build flow
+- Root layout simplified — Navigation/Footer moved to site layout so configurator has its own chrome
+- 3D watch model (ConfigurableWatch.tsx) retained for future use with custom 3D renders
+
+**Brand Style Guide**
+- Added text contrast rules to CLAUDE.md: never use grey/steel/silver text on dark backgrounds
+- Established hierarchy: cream (headings) → cream/80 (body) → cream/70 (secondary) → cream/60 (labels) → gold (accent)
+
 ### v0.3.1 — Fix Scroll Jitter by Removing Annotation Lines & Backdrop Blur
 
 **Scroll Performance**

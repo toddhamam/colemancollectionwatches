@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import { fontVariables } from '@/lib/fonts';
 import { BRAND } from '@/lib/constants';
-import { GSAPProvider } from '@/components/animation/GSAPProvider';
-import { Navigation } from '@/components/layout/Navigation';
-import { Footer } from '@/components/layout/Footer';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -19,11 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fontVariables} antialiased`}>
-        <GSAPProvider>
-          <Navigation />
-          {children}
-          <Footer />
-        </GSAPProvider>
+        {children}
       </body>
     </html>
   );

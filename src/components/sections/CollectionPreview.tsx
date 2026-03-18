@@ -24,7 +24,7 @@ function WatchCard({ watch, index }: { watch: Watch; index: number }) {
       viewport={{ once: true, margin: '-50px' }}
     >
       <Link
-        href={`/collection/${watch.slug}`}
+        href="/build"
         className="group block relative overflow-hidden bg-[#1A1A1A] rounded-lg border border-[#2A2A2A] hover:border-[#C9A96E]/30 transition-all duration-500"
       >
         {/* Watch image */}

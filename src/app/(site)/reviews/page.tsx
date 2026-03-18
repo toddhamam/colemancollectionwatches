@@ -258,10 +258,10 @@ export default function ReviewsPage() {
             their timepiece with pride.
           </p>
           <Link
-            href="/collection"
+            href="/build"
             className="inline-block font-sans text-xs uppercase tracking-[0.2em] px-8 py-3 border border-cc-gold/60 text-cc-gold hover:bg-cc-gold hover:text-cc-black transition-all duration-300"
           >
-            View Collection
+            Build Your Timepiece
           </Link>
         </div>
       </section>

@@ -68,10 +68,10 @@ export function Navigation() {
           {/* Right: Shop Button + Mobile Toggle */}
           <div className="flex items-center gap-6">
             <Link
-              href="/collection"
+              href="/build"
               className="hidden md:inline-block font-sans text-xs uppercase tracking-[0.2em] px-5 py-2 border border-cc-gold/60 text-cc-gold hover:bg-cc-gold hover:text-cc-black transition-all duration-300"
             >
-              Shop
+              Build Yours
             </Link>
 
             {/* Mobile Hamburger */}
@@ -134,11 +134,11 @@ export function Navigation() {
               transition={{ delay: 0.15 + NAV_LINKS.length * 0.06, duration: 0.4 }}
             >
               <Link
-                href="/collection"
+                href="/build"
                 onClick={closeMobile}
                 className="mt-4 font-sans text-xs uppercase tracking-[0.2em] px-8 py-3 border border-cc-gold/60 text-cc-gold hover:bg-cc-gold hover:text-cc-black transition-all duration-300"
               >
-                Shop
+                Build Yours
               </Link>
             </motion.div>
           </motion.div>
