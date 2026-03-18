@@ -51,6 +51,23 @@ These are auto-injected by the Vercel plugin when relevant files are edited. The
 | `vercel:vercel-firewall` | DDoS, WAF, rate limiting, bot protection |
 | `vercel:observability` | Analytics, Speed Insights, logging |
 
+## Brand Style Guide — Text Contrast Rules
+
+**NEVER use dark text on dark backgrounds.** Grey-on-black is unreadable and breaks the luxury aesthetic.
+
+On dark backgrounds (`bg-cc-black-rich`, `bg-cc-charcoal`, etc.), use this text hierarchy:
+
+| Role | Class | When to use |
+|---|---|---|
+| **Headings** | `text-cc-cream` or `text-cc-white` | All headings, titles |
+| **Body / descriptions** | `text-cc-cream/80` | Paragraphs, descriptions, button labels |
+| **Secondary body** | `text-cc-cream/70` | Less prominent descriptions, detail text |
+| **Labels / specs / fine print** | `text-cc-cream/60` | Spec values, disclaimers, timestamps |
+| **Decorative / helper** | `text-cc-cream/50` | "Drag to rotate", watermarks |
+| **Accent text** | `text-cc-gold` or `text-cc-gold/70` | Prices, taglines, active states |
+
+**Do NOT use:** `text-cc-steel`, `text-cc-silver`, `text-cc-graphite`, or `text-[#8A8A8A]` on dark backgrounds. These are effectively invisible.
+
 ## eCommerce Stack (Planned)
 
 No pre-built eCommerce skills exist in the Claude ecosystem. These features will be built with Claude's general coding ability:

@@ -26,8 +26,8 @@ export function CTASection() {
             defining timepiece arrives.
           </p>
           <div className="flex flex-wrap gap-4 justify-center mt-10">
-            <Button variant="filled" size="lg" href="/collection">
-              Explore Collection
+            <Button variant="filled" size="lg" href="/build">
+              Build Your Timepiece
             </Button>
             <Button
               variant="outline"

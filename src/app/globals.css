@@ -125,3 +125,11 @@ body::before {
 .animate-spin-slow-reverse {
   animation: spin-slow-reverse 45s linear infinite;
 }
+
+/* ----------------------------------------
+   Radial Gradient Utility
+   ---------------------------------------- */
+
+.bg-gradient-radial {
+  background: radial-gradient(var(--tw-gradient-stops));
+}
