@@ -24,7 +24,7 @@ export function Footer() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-sans text-xs uppercase tracking-[0.2em] text-cc-silver hover:text-cc-gold transition-colors duration-300"
+              className="font-sans text-xs uppercase tracking-[0.2em] text-cc-cream/80 hover:text-cc-gold transition-colors duration-300"
             >
               {link.label}
             </Link>
@@ -37,7 +37,7 @@ export function Footer() {
             href={BRAND.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.2em] text-cc-silver hover:text-cc-gold transition-colors duration-300"
+            className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.2em] text-cc-cream/80 hover:text-cc-gold transition-colors duration-300"
           >
             <svg
               className="w-4 h-4"
@@ -57,7 +57,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-center text-xs text-cc-steel">
+        <p className="text-center text-xs text-cc-cream/60">
           &copy; {new Date().getFullYear()} {BRAND.fullName}. All rights reserved.
         </p>
       </div>

@@ -19,7 +19,7 @@ function StarRating({ rating, size = 'sm' }: { rating: number; size?: 'sm' | 'lg
       {[...Array(5)].map((_, i) => (
         <svg
           key={i}
-          className={`${sizeClass} ${i < rating ? 'text-cc-gold' : 'text-cc-steel'}`}
+          className={`${sizeClass} ${i < rating ? 'text-cc-gold' : 'text-cc-cream/30'}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -76,7 +76,7 @@ function ReviewCard({ testimonial, index }: { testimonial: Testimonial; index: n
               </span>
             )}
           </div>
-          <p className="text-xs text-cc-silver font-sans mt-0.5">{testimonial.location}</p>
+          <p className="text-xs text-cc-cream/60 font-sans mt-0.5">{testimonial.location}</p>
         </div>
       </div>
 
@@ -92,7 +92,7 @@ function ReviewCard({ testimonial, index }: { testimonial: Testimonial; index: n
 
       {/* Product variant tag */}
       <div className="mt-5 pt-4 border-t border-cc-graphite">
-        <span className="inline-block text-[10px] uppercase tracking-[0.15em] text-cc-silver font-sans px-2.5 py-1 border border-cc-graphite rounded-sm">
+        <span className="inline-block text-[10px] uppercase tracking-[0.15em] text-cc-cream/60 font-sans px-2.5 py-1 border border-cc-graphite rounded-sm">
           {testimonial.product}
         </span>
       </div>
@@ -174,7 +174,7 @@ export default function ReviewsPage() {
               <StarRating rating={5} size="lg" />
               <span className="text-2xl font-serif font-bold text-cc-white">{averageRating}</span>
             </div>
-            <p className="text-xs text-cc-silver font-sans tracking-wide">
+            <p className="text-xs text-cc-cream/70 font-sans tracking-wide">
               Based on {testimonials.length} verified reviews
             </p>
           </motion.div>
@@ -206,13 +206,13 @@ export default function ReviewsPage() {
                   className={`font-sans text-[11px] uppercase tracking-[0.12em] px-4 py-2 border rounded-sm transition-all duration-300 cursor-pointer ${
                     isActive
                       ? 'bg-cc-gold/10 border-cc-gold/60 text-cc-gold'
-                      : 'border-cc-graphite text-cc-silver hover:border-cc-gold/30 hover:text-cc-cream'
+                      : 'border-cc-graphite text-cc-cream/70 hover:border-cc-gold/30 hover:text-cc-cream'
                   }`}
                 >
                   {variant}
                   <span
                     className={`ml-1.5 text-[10px] ${
-                      isActive ? 'text-cc-gold/70' : 'text-cc-steel'
+                      isActive ? 'text-cc-gold/70' : 'text-cc-cream/50'
                     }`}
                   >
                     ({count})
@@ -238,7 +238,7 @@ export default function ReviewsPage() {
           {/* Empty state */}
           {filteredTestimonials.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-cc-silver font-sans text-sm">
+              <p className="text-cc-cream/70 font-sans text-sm">
                 No reviews found for this filter.
               </p>
             </div>
