@@ -204,7 +204,7 @@ export function DeconstructionSection() {
                 <h3 className="text-lg font-serif font-bold text-[#FAFAF7] mb-2">
                   {card.title}
                 </h3>
-                <p className="text-sm font-sans font-light text-[#8A8A8A] leading-relaxed">
+                <p className="text-sm font-sans font-light text-cc-cream/80 leading-relaxed">
                   {card.description}
                 </p>
               </div>

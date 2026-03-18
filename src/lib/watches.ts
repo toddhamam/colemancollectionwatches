@@ -3,7 +3,7 @@ import type { Watch } from '@/types'
 export const WATCHES: Watch[] = [
   {
     slug: 'noir',
-    name: 'The Noir',
+    name: 'The Open-Heart Noir',
     tagline: 'Command Every Second',
     description:
       'The dark heart of the collection. A black open-heart dial reveals the Miyota automatic movement beneath, framed by polished stainless steel and Roman numeral indices. For those who lead from the shadows.',
@@ -21,7 +21,7 @@ export const WATCHES: Watch[] = [
   },
   {
     slug: 'blanc',
-    name: 'The Blanc',
+    name: 'The Open-Heart Blanc',
     tagline: 'Where Light Meets Precision',
     description:
       'A luminous white open-heart dial set against polished steel, revealing the mechanical heartbeat within. The Blanc is clarity of purpose, made visible. For those who refuse to settle.',

@@ -45,7 +45,7 @@ export function StepProgress() {
               className={`
                 absolute -top-7 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap
                 transition-opacity duration-200
-                ${isActive ? 'opacity-100 text-cc-gold' : 'opacity-0 group-hover:opacity-100 text-cc-silver'}
+                ${isActive ? 'opacity-100 text-cc-gold' : 'opacity-0 group-hover:opacity-100 text-cc-cream/80'}
               `}
             >
               {step.label}

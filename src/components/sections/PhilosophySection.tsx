@@ -23,7 +23,7 @@ export function PhilosophySection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
           <RevealOnScroll delay={0.1}>
-            <p className="text-[#8A8A8A] font-sans font-light text-base md:text-lg leading-relaxed">
+            <p className="text-cc-cream/80 font-sans font-light text-base md:text-lg leading-relaxed">
               Born from a conviction that mechanical watchmaking represents
               humanity&apos;s most elegant marriage of art and engineering,
               Coleman Collection creates timepieces for the defining moments of
@@ -32,7 +32,7 @@ export function PhilosophySection() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.25}>
-            <p className="text-[#8A8A8A] font-sans font-light text-base md:text-lg leading-relaxed">
+            <p className="text-cc-cream/80 font-sans font-light text-base md:text-lg leading-relaxed">
               Each watch is an invitation to join a lineage of individuals who
               measure their days not in hours, but in achievements. For those who
               refuse to settle.

@@ -6,6 +6,30 @@ Built with Next.js 16, React Three Fiber, GSAP, Framer Motion, and Tailwind CSS 
 
 ## Changelog
 
+### v0.4.1 — Fix Grey Text Contrast & Product Card Updates
+
+**Text Contrast Overhaul**
+- Replaced all grey/steel/silver text (`text-cc-silver`, `text-cc-steel`, `text-[#8A8A8A]`, `text-[#4A4A4A]`, `text-[#A0A0A0]`) with cream/white opacity variants across 13 files
+- Navigation links: `text-cc-silver` → `text-cc-cream/80`
+- Footer links, Instagram, copyright: silver/steel → `text-cc-cream/80` and `text-cc-cream/60`
+- All section body text (Hero, Philosophy, Craftsmanship, CTA, Deconstruction, Collection): `text-[#8A8A8A]` → `text-cc-cream/80`
+- Testimonial section: carousel dots, arrows, counter, review count, locations all upgraded from steel/silver to cream variants
+- Reviews page: star ratings, filter tabs, count badges, location text, product tags, empty state all fixed
+- Configurator step progress: tooltip hover text upgraded from silver to cream
+- SectionHeading component: description text upgraded globally
+
+**Brand Style Guide (CLAUDE.md)**
+- Expanded from basic contrast rules to comprehensive Brand Style Guide
+- Added banned text colors table with specific classes and hex values
+- Added required text hierarchy with exact Tailwind classes for each role
+- Added interactive elements table (nav links, carousel dots, filter tabs, star ratings)
+- Added quick self-check checklist for UI changes
+
+**Product Card Updates**
+- Renamed watch models: "The Noir" → "The Open-Heart Noir", "The Blanc" → "The Open-Heart Blanc"
+- Price display changed from "$495" to "From $495"
+- CTA button changed from "Explore" to "Build Yours"
+
 ### v0.4.0 — "Build Your Timepiece" Watch Configurator
 
 **Custom Watch Builder**

@@ -58,7 +58,7 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-sans text-xs uppercase tracking-[0.2em] text-cc-silver hover:text-cc-gold transition-colors duration-300"
+                className="font-sans text-xs uppercase tracking-[0.2em] text-cc-cream/80 hover:text-cc-gold transition-colors duration-300"
               >
                 {link.label}
               </Link>

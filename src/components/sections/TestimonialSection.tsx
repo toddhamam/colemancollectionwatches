@@ -58,7 +58,7 @@ export function TestimonialSection() {
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
           ))}
-          <span className="text-xs text-[#8A8A8A] ml-2 font-sans">
+          <span className="text-xs text-cc-cream/70 ml-2 font-sans">
             {testimonials.length}+ verified reviews
           </span>
         </div>
@@ -96,7 +96,7 @@ export function TestimonialSection() {
               <p className="text-sm text-[#C9A96E] uppercase tracking-wider font-sans">
                 {t.name}
               </p>
-              <p className="text-xs text-[#8A8A8A] mt-1 font-sans">
+              <p className="text-xs text-cc-cream/70 mt-1 font-sans">
                 {t.location} — {t.product}
                 {t.verified && (
                   <span className="ml-2 text-[#C9A96E]">✓ Verified</span>
@@ -116,7 +116,7 @@ export function TestimonialSection() {
               className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                 i === current
                   ? 'bg-[#C9A96E] w-4'
-                  : 'bg-[#4A4A4A] hover:bg-[#8A8A8A] w-1.5'
+                  : 'bg-cc-cream/30 hover:bg-cc-cream/50 w-1.5'
               }`}
             />
           ))}
@@ -128,19 +128,19 @@ export function TestimonialSection() {
             onClick={() =>
               setCurrent((prev) => (prev - 1 + FEATURED.length) % FEATURED.length)
             }
-            className="text-[#4A4A4A] hover:text-[#C9A96E] transition-colors cursor-pointer"
+            className="text-cc-cream/50 hover:text-[#C9A96E] transition-colors cursor-pointer"
             aria-label="Previous testimonial"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <span className="text-xs text-[#4A4A4A] font-mono">
+          <span className="text-xs text-cc-cream/60 font-mono">
             {String(current + 1).padStart(2, '0')} / {String(FEATURED.length).padStart(2, '0')}
           </span>
           <button
             onClick={advance}
-            className="text-[#4A4A4A] hover:text-[#C9A96E] transition-colors cursor-pointer"
+            className="text-cc-cream/50 hover:text-[#C9A96E] transition-colors cursor-pointer"
             aria-label="Next testimonial"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

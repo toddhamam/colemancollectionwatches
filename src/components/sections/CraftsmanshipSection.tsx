@@ -37,7 +37,7 @@ export function CraftsmanshipSection() {
             align="left"
           />
 
-          <p className="text-[#8A8A8A] font-sans font-light text-base md:text-lg leading-relaxed mt-6">
+          <p className="text-cc-cream/80 font-sans font-light text-base md:text-lg leading-relaxed mt-6">
             Every Coleman Collection timepiece houses a Miyota automatic
             movement — visible through a sapphire exhibition caseback and the
             signature open-heart dial. Over 200 meticulously assembled
@@ -51,7 +51,7 @@ export function CraftsmanshipSection() {
                 <p className="text-3xl font-serif text-[#C9A96E]">
                   {stat.value}
                 </p>
-                <p className="text-xs uppercase tracking-wider text-[#8A8A8A] mt-1">
+                <p className="text-xs uppercase tracking-wider text-cc-cream/80 mt-1">
                   {stat.label}
                 </p>
               </div>
@@ -70,7 +70,7 @@ export function CraftsmanshipSection() {
             <h3 className="text-3xl md:text-4xl font-serif text-[#FAFAF7] leading-tight">
               The Soul Made Visible
             </h3>
-            <p className="text-[#8A8A8A] font-sans font-light text-base md:text-lg leading-relaxed mt-6">
+            <p className="text-cc-cream/80 font-sans font-light text-base md:text-lg leading-relaxed mt-6">
               The open-heart aperture at six o&apos;clock reveals the balance
               wheel in motion — the beating heart of the timepiece. It is a
               window into the mechanical soul that most watches keep hidden.

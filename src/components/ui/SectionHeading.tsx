@@ -33,7 +33,7 @@ export function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`text-lg text-[#8A8A8A] font-sans font-light mt-6 max-w-2xl ${
+          className={`text-lg text-cc-cream/80 font-sans font-light mt-6 max-w-2xl ${
             align === 'center' ? 'mx-auto' : ''
           }`}
         >

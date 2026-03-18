@@ -46,15 +46,15 @@ function WatchCard({ watch, index }: { watch: Watch; index: number }) {
           <p className="text-sm text-[#C9A96E] mt-1 uppercase tracking-wider">
             {watch.tagline}
           </p>
-          <p className="text-sm text-[#8A8A8A] mt-4 font-light line-clamp-2">
+          <p className="text-sm text-cc-cream/80 mt-4 font-light line-clamp-2">
             {watch.description}
           </p>
           <div className="flex items-center justify-between mt-6">
             <p className="text-lg text-[#F5F0E8] font-light">
-              {formatPrice(watch.price)}
+              From {formatPrice(watch.price)}
             </p>
             <span className="text-sm text-[#C9A96E] uppercase tracking-wider inline-flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
-              Explore
+              Build Yours
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 &rarr;
               </span>

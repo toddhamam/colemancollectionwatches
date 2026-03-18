@@ -239,7 +239,7 @@ export function HeroSection() {
             </motion.p>
 
             <motion.p
-              className="text-xs md:text-sm uppercase tracking-[0.2em] text-[#8A8A8A] font-sans font-light mt-3"
+              className="text-xs md:text-sm uppercase tracking-[0.2em] text-cc-cream/70 font-sans font-light mt-3"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1.4 }}
@@ -255,7 +255,7 @@ export function HeroSection() {
           className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
           style={{ opacity: 0, transition: 'opacity 1s ease-out' }}
         >
-          <span className="text-[10px] uppercase tracking-[0.3em] text-[#8A8A8A] font-sans">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-cc-cream/60 font-sans">
             Scroll
           </span>
           <div className="w-px h-12 bg-gradient-to-b from-[#C9A96E] to-transparent animate-scroll-line" />
@@ -315,7 +315,7 @@ export function HeroSection() {
                   <h3 className="text-xl font-serif font-bold text-[#FAFAF7] mb-2">
                     {card.title}
                   </h3>
-                  <p className="text-sm font-sans font-light text-[#A0A0A0] leading-relaxed">
+                  <p className="text-sm font-sans font-light text-cc-cream/80 leading-relaxed">
                     {card.description}
                   </p>
                 </div>

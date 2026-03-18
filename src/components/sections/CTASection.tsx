@@ -21,7 +21,7 @@ export function CTASection() {
           <h2 className="font-serif text-4xl md:text-5xl text-[#FAFAF7]">
             Own The Moment
           </h2>
-          <p className="text-[#8A8A8A] font-sans font-light mt-6 text-base md:text-lg leading-relaxed">
+          <p className="text-cc-cream/80 font-sans font-light mt-6 text-base md:text-lg leading-relaxed">
             Join the Coleman Collection. Be the first to know when our next
             defining timepiece arrives.
           </p>
