@@ -6,6 +6,41 @@ Built with Next.js 16, React Three Fiber, GSAP, Framer Motion, and Tailwind CSS 
 
 ## Changelog
 
+### v0.5.0 — SEO/GEO-Optimized Journal Section & Navigation Updates
+
+**Journal Section (`/journal`)**
+- New MDX-based content section with 5 seed articles covering horology, style, craftsmanship, and buying guides
+- Listing page with featured article hero, 3-column card grid, and category filter tabs (All, Horology, Style, Craftsmanship, Guides)
+- Individual article pages with hero image, sticky table of contents sidebar, FAQ accordion, related articles grid, and "Build Your Timepiece" CTA
+- Category pages at `/journal/category/[category]` for filtered browsing
+- Content loaded from `content/journal/*.mdx` via `gray-matter` + `reading-time` + `next-mdx-remote/rsc`
+
+**SEO Infrastructure**
+- `robots.ts` allowing all crawlers with sitemap reference
+- `sitemap.ts` dynamically generating URLs for all pages including journal articles and categories
+- Root layout metadata upgrade with `metadataBase`, Open Graph defaults, Twitter card defaults
+- JSON-LD structured data on every article: `Article` + `FAQPage` + `BreadcrumbList` schemas
+- Organization JSON-LD in root layout
+
+**GEO Optimizations (AI Search Discoverability)**
+- `public/llms.txt` machine-readable site summary following the llmstxt.org standard
+- FAQ sections on every article with structured Q&A (heavily weighted by AI search engines)
+- Citation-magnet lead paragraphs with specific facts and numbers
+- Comparison tables in markdown for AI-parseable structured data
+- Internal linking clusters between articles for topical authority
+
+**Seed Content (5 Articles)**
+1. "The Art of Automatic Movement" — why mechanical watches matter (featured hero)
+2. "Miyota vs Sellita" — movement comparison with spec tables
+3. "How to Style a Luxury Watch" — occasion-based styling guide
+4. "Crafting a Coleman Collection Timepiece" — materials deep-dive
+5. "Guide to Watch Water Resistance Ratings" — ATM/bar ratings explained
+
+**Navigation Updates**
+- Removed "Collection" from header and footer nav
+- Removed "Contact" from header nav (kept in footer)
+- Reordered header nav: Build | Craftsmanship | Reviews | Story | Journal
+
 ### v0.4.1 — Fix Grey Text Contrast & Product Card Updates
 
 **Text Contrast Overhaul**

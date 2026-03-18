@@ -12,10 +12,10 @@ export const BRAND = {
 
 export const NAV_LINKS: NavLink[] = [
   { label: 'Build', href: '/build' },
-  { label: 'Collection', href: '/collection' },
   { label: 'Craftsmanship', href: '/#craftsmanship' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'Story', href: '/about' },
+  { label: 'Journal', href: '/journal' },
   { label: 'Contact', href: '/contact' },
 ];
 

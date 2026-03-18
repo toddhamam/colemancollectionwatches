@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import { NAV_LINKS, BRAND } from '@/lib/constants';
 
+const HEADER_LINKS = NAV_LINKS.filter((link) => link.href !== '/contact');
+
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -54,7 +56,7 @@ export function Navigation() {
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
+            {HEADER_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -111,7 +113,7 @@ export function Navigation() {
             transition={{ type: 'tween', duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
             className="fixed inset-0 z-40 bg-cc-black-rich flex flex-col items-center justify-center gap-10 md:hidden"
           >
-            {NAV_LINKS.map((link, i) => (
+            {HEADER_LINKS.map((link, i) => (
               <motion.div
                 key={link.href}
                 initial={{ opacity: 0, y: 20 }}
@@ -131,7 +133,7 @@ export function Navigation() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15 + NAV_LINKS.length * 0.06, duration: 0.4 }}
+              transition={{ delay: 0.15 + HEADER_LINKS.length * 0.06, duration: 0.4 }}
             >
               <Link
                 href="/build"
